@@ -63,7 +63,7 @@ for line in enlaces:
         try:
             value = driver.find_element(By.CLASS_NAME, "vp-center") # Encuentra el elemento a copiar.
             innerhtml = value.get_attribute("innerHTML") # Coge su contenido.
-            fileToWrite = open(r"C:\CursoPython\script\page_source{0}.txt".format(n), "w", encoding="utf-8") # Abre en escritura lo que quieres escribir.
+            fileToWrite = open(r"PATH\page_source{0}.txt".format(n), "w", encoding="utf-8") # Abre en escritura lo que quieres escribir.
             print(value) # Esto lo puse para ver que funcionaba.
             fileToWrite.write(innerhtml) # Escribe el contenido.
             fileToWrite.close() # Cierra.
