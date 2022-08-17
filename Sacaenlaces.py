@@ -43,17 +43,15 @@ for filename in os.listdir(directorio2):
 for archive in os.listdir(directorio2): # Coge cada archivo de txt.
     descarga = open(os.path.join(directorio2, archive), "r") # Coge cada enlace de estos archivos.
     for enlace in descarga: # Por cada enlace en cada archivo...
-        for mp4 in os.listdir(r"PATH\videos"): # Esto dice que por cada archivo en este directorio. Hay que poner el PATH
-            z = z + 1
-            if r"Leccion{0}.mp4".format(z) not in os.listdir(r"PATH\videos"): # Si el archivo no está en la carpeta, pasa a descargar.
-                print("Descargando", enlace)
-                urllib.request.urlretrieve((enlace), r"PATH\Leccion{0}.mp4".format(z)) # Descarga el archivo con este nombre en esta dirección. Hay que poner el PATH
-                break
-            elif r"Leccion{0}.mp4".format(z) in os.listdir(r"PATH\videos"): # Si el archivo está presente, te lo dice y vuelve al for mp4. Hay que poner el PATH
-                print(r"Leccion{0}.mp4".format(z), "ya está presente en el directorio.")
-                break
-            else:
-                print("Qué ha pasado, yo no lo sé.") # Esto es por si pasaba alguna locura.
+        if r"Leccion{0}.mp4".format(z) not in os.listdir(r"PATH\videos"): # Si el archivo no está en la carpeta, pasa a descargar.
+            print("Descargando", enlace)
+            urllib.request.urlretrieve((enlace), r"PATH\Leccion{0}.mp4".format(z)) # Descarga el archivo con este nombre en esta dirección. Hay que poner el PATH
+            break
+        elif r"Leccion{0}.mp4".format(z) in os.listdir(r"PATH\videos"): # Si el archivo está presente, te lo dice y vuelve al for mp4. Hay que poner el PATH
+            print(r"Leccion{0}.mp4".format(z), "ya está presente en el directorio.")
+            break
+        else:
+            print("Qué ha pasado, yo no lo sé.") # Esto es por si pasaba alguna locura.
 
 print("Ya estaría, no?")
 
